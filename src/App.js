@@ -32,6 +32,7 @@ const yesStyle = {
       </label>
       </div>
     </div>
+    {console.log("Please don't get offended, this is site is intended as a joke. The 'he' could literally be anyone.")}
     </>
   );
 }
