@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './index.css';
 import Switch from "react-switch";
 
@@ -6,11 +6,19 @@ const App = () => {
 
 const [checked, setChecked] = useState(false);
 const [dead, setDead] = useState(false);
+const [logged, setLogged] = useState(false);
 
 const handleChange = () => {
   setChecked(!checked);
   setDead(!dead);
 }
+
+useEffect( () => {
+  if (!logged) {
+    console.log("Please don't get offended, this is site is intended as a joke. \nThe 'he' could literally be anyone.");
+    setLogged(true);
+  }
+}, [logged])
 
 const noStyle = {
   backgroundColor: 'black',
@@ -32,7 +40,6 @@ const yesStyle = {
       </label>
       </div>
     </div>
-    {console.log("Please don't get offended, this is site is intended as a joke. The 'he' could literally be anyone.")}
     </>
   );
 }
