@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './index.css';
-import Emoji from './components/Emoji';
-import TopConfetti from './components/TopConfetti';
-import BottomConfetti from './components/BottomConfetti';
 import Switch from "react-switch";
+import Emoji from './components/Emoji';
+import Confetti from 'react-dom-confetti';
+import {topConfig} from './components/topConfig'
+import {bottomConfig} from './components/bottomConfig'
 
 
 const App = () => {
@@ -38,7 +39,12 @@ const App = () => {
 
   return (
     <>
-      <TopConfetti props={dead} />
+      <div style={{ marginLeft: '80%' }}>
+        <Confetti active={dead} config={topConfig} />
+      </div>
+      <div style={{ marginLeft: '20%' }}>
+        <Confetti active={dead} config={topConfig} />
+      </div>
       <div className="content" style={dead ? yesStyle : noStyle}>
         <div style={{ paddingTop: '4em' }}>
           {dead ? yep : nope}
@@ -48,7 +54,10 @@ const App = () => {
               <Switch offColor='#804221' onColor='#5E1DF0' onChange={handleChange} checked={checked} />
             </label>
           </div>
-          <BottomConfetti props={dead} />
+          <Confetti active={dead} config={bottomConfig} />
+          <div style={{ marginLeft: '99%' }}>
+            <Confetti active={dead} config={bottomConfig} />
+          </div>
         </div>
       </div>
     </>
