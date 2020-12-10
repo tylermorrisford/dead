@@ -6,8 +6,8 @@ import Confetti from 'react-dom-confetti';
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import {topConfig} from './components/topConfig'
-import {bottomConfig} from './components/bottomConfig'
+import { topConfig } from './components/topConfig'
+import { bottomConfig } from './components/bottomConfig'
 
 
 const App = () => {
@@ -40,11 +40,10 @@ const App = () => {
   const nope = <><Emoji symbol="💩" label="poop" /> Nope <Emoji symbol="💩" label="poop" /></>
   const yep = <><Emoji symbol="😄" label="smiley" /> Yes! <Emoji symbol="😇" label="angelic-smiley" /></>
 
-  const breakTag = <br/>;
+  const breakTag = <br />;
 
   return (
-    <> {console.log('window.innerWidth = ', window.innerWidth)}
-    {console.log(visualViewport.width)}
+    <>
       <div style={{ marginLeft: '80%' }}>
         <Confetti active={dead} config={topConfig} />
       </div>
@@ -52,17 +51,17 @@ const App = () => {
         <Confetti active={dead} config={topConfig} />
       </div>
       <div className="content" style={dead ? yesStyle : noStyle}>
-        <Container className="mt-3 mb-3 pt-5 pb-1 align-items-center" style={{paddingTop: '4rem'}}>
+        <Container className="mt-3 mb-3 pt-5 pb-1 align-items-center" style={{ paddingTop: '4rem' }}>
           <Row>
-           <Col md={{span: 8, offset: 2}} sm={12} >
-          {dead ? yep : nope}
-          <div className="slider">
-            <label style={{ fontSize: '22px' }}>
-              {dead ? <><span>he's dead.</span><br /></> : <><span>but just for giggles,{window.innerWidth < 480 ? breakTag : ''} what if he was dead?  try it</span><br /></>}
-              <Switch offColor='#804221' onColor='#5E1DF0' onChange={handleChange} checked={checked} />
-            </label>
-          </div>
-           </Col>
+            <Col md={{ span: 8, offset: 2 }} sm={12} >
+              {dead ? yep : nope}
+              <div className="slider">
+                <label style={{ fontSize: '22px' }}>
+                  {dead ? <><span>he's dead.</span><br /></> : <><span>but just for giggles,{window.innerWidth < 480 ? breakTag : ''} what if he was dead?  try it</span><br /></>}
+                  <Switch offColor='#804221' onColor='#5E1DF0' onChange={handleChange} checked={checked} />
+                </label>
+              </div>
+            </Col>
           </Row>
           <Confetti active={dead} config={bottomConfig} />
           <div style={{ marginLeft: '99%' }}>
@@ -71,7 +70,7 @@ const App = () => {
         </Container>
       </div>
     </>
-  );
+  )
 }
 
 export default App;
