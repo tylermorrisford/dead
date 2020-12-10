@@ -3,6 +3,9 @@ import './index.css';
 import Switch from "react-switch";
 import Emoji from './components/Emoji';
 import Confetti from 'react-dom-confetti';
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 import {topConfig} from './components/topConfig'
 import {bottomConfig} from './components/bottomConfig'
 
@@ -46,7 +49,9 @@ const App = () => {
         <Confetti active={dead} config={topConfig} />
       </div>
       <div className="content" style={dead ? yesStyle : noStyle}>
-        <div style={{ paddingTop: '4em' }}>
+        <Container className="mt-3 align-items-center" style={{paddingTop: '4rem'}}>
+          <Row>
+           <Col md={{span: 8, offset: 2}} sm={12} >
           {dead ? yep : nope}
           <div className="slider">
             <label style={{ fontSize: '22px' }}>
@@ -54,11 +59,13 @@ const App = () => {
               <Switch offColor='#804221' onColor='#5E1DF0' onChange={handleChange} checked={checked} />
             </label>
           </div>
+           </Col>
+          </Row>
           <Confetti active={dead} config={bottomConfig} />
           <div style={{ marginLeft: '99%' }}>
             <Confetti active={dead} config={bottomConfig} />
           </div>
-        </div>
+        </Container>
       </div>
     </>
   );

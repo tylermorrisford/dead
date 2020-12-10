@@ -9,10 +9,9 @@ body {
 
 .content {
   height: 100vh;
-  /* padding-top: 4em; */
   text-align: center;
   font-family: 'Architects Daughter', cursive;
-  font-size: 5rem;
+  font-size: 4rem;
   font-weight: bolder;
 }
 
